@@ -7,7 +7,6 @@ function openmail {
     start-process ms-unistore-email:
 }
 
-
 function p {
     param(
         [Parameter(Mandatory)]
@@ -21,3 +20,4 @@ function p {
         return write-host "$address offline"
     }
 }
+
