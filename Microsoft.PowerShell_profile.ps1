@@ -3,9 +3,15 @@ $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
 
 set-location C:\
+
+$date = date
+
+write-host $date
+
 function openmail {
     start-process ms-unistore-email:
 }
+
 
 function p {
     param(
@@ -20,4 +26,3 @@ function p {
         return write-host "$address offline"
     }
 }
-
