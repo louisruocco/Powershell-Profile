@@ -3,6 +3,8 @@ $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
 
 set-location C:\
+
+Start-Process -FilePath "powershell" -Verb RunAs
 function openmail {
     start-process ms-unistore-email:
 }
