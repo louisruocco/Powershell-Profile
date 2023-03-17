@@ -8,7 +8,6 @@ $date = date
 
 write-host $date
 
-Start-Process -FilePath "powershell" -Verb RunAs
 function openmail {
     start-process ms-unistore-email:
 }
