@@ -4,14 +4,11 @@ $shell.ForegroundColor = "green"
 
 set-location C:\
 
-<<<<<<< HEAD
 $date = date
 
 write-host $date
 
-=======
 Start-Process -FilePath "powershell" -Verb RunAs
->>>>>>> develop
 function openmail {
     start-process ms-unistore-email:
 }
