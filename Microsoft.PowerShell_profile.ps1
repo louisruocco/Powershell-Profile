@@ -1,6 +1,6 @@
 
 $shell = $Host.UI.RawUI
-$shell.ForegroundColor = "green"
+$shell.ForegroundColor = "red"
 
 set-location C:\
 
