@@ -2,8 +2,6 @@
 $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
 
-start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
-
 set-location C:\
 
 $date = date
@@ -26,4 +24,8 @@ function p {
     } else {
         return write-host "$address offline"
     }
+}
+
+function getspaceimg {
+    start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
 }
