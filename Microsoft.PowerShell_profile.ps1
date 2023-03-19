@@ -2,6 +2,8 @@
 $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
 
+start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
+
 set-location C:\
 function openmail {
     start-process ms-unistore-email:
