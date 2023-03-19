@@ -29,3 +29,5 @@ function p {
 function getspaceimg {
     start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
 }
+
+Start-Job getspaceimg
