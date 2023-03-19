@@ -5,6 +5,11 @@ $shell.ForegroundColor = "green"
 start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
 
 set-location C:\
+
+$date = date
+
+write-host $date
+
 function openmail {
     start-process ms-unistore-email:
 }
@@ -22,4 +27,3 @@ function p {
         return write-host "$address offline"
     }
 }
-
