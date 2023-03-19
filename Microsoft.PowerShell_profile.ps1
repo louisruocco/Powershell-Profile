@@ -29,5 +29,4 @@ function p {
 function psprofileupdate {
     start-process "D:\Code\Update-PSprofile\script.ps1"
 }
-
-Start-Job -FilePath "D:\Code\Astronomy Picture of the Day\script.ps1"
+start-process "D:\Code\Astronomy Picture of the Day\script.ps1"
