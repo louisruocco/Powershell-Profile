@@ -2,8 +2,6 @@
 $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
 
-set-location C:\
-
 $date = date
 
 write-host $date
