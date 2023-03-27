@@ -23,3 +23,7 @@ function p {
         return write-host "$address offline"
     }
 }
+
+function psprofileupdate {
+    start-process "D:\Code\Update-PSprofile\script.ps1"
+}
