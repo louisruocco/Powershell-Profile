@@ -4,7 +4,6 @@ $shell.ForegroundColor = "green"
 function openmail {
     start-process ms-unistore-email:
 }
-
 function p {
     param(
         [Parameter(Mandatory)]
@@ -20,5 +19,5 @@ function p {
 }
 
 function psprofileupdate {
-    start-process "D:\Code\Update-PSprofile\script.ps1"
+    start-process "\Code\Update-PSprofile\script.ps1"
 }
