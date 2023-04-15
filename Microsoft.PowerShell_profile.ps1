@@ -1,11 +1,6 @@
 
 $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
-
-$date = date
-
-write-host $date
-
 function openmail {
     start-process ms-unistore-email:
 }
