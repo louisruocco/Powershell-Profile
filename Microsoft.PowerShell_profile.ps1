@@ -25,4 +25,6 @@ function psprofileupdate {
     git init
     git remote add origin $url
     git clone $url
+    start-process "$path\update-powershell-profile-script\script.ps1"
+    exit
 }
