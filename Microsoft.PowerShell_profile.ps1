@@ -26,5 +26,5 @@ function psprofileupdate {
     git remote add origin $url
     git clone $url
     start-process "$home\documents\psprofileupdate\update-powershell-profile-script\script.ps1"
-    removee-item $path -force
+    remove-item $path -force
 }
