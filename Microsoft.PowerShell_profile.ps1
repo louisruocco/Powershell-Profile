@@ -19,9 +19,10 @@ function p {
 }
 
 function psprofileupdate {
-    $path = "C:\Documents\updatepsprofile"
-    if($path){
-        set-location $path
-        listdir
-    }
+    $url = "https://github.com/louisruocco/Update-Powershell-Profile-Script"
+    $path = new-item -Path "$home\documents\psprofileupdate" -type Directory
+    set-location $path
+    git init
+    git remote add origin $url
+    git clone $url
 }
