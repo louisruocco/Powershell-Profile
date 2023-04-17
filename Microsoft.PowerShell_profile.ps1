@@ -19,13 +19,14 @@ function p {
 }
 function updateprofile {
     $url = "https://github.com/louisruocco/Update-Powershell-Profile-Script"
-    $path = new-item -Path "$home\documents\psprofileupdate" -type Directory
+    $path = "$home\documents\psprofileupdate"
+    New-item -Path $path -type Directory
     set-location $path
     git init
     git remote add origin $url
     git clone $url
     start-process "$home\documents\psprofileupdate\update-powershell-profile-script\script.ps1"
     set-location C:\
-    remove-item "$home\documents\psprofileupdate" -force
+    remove-item $path -force
     exit
 }
