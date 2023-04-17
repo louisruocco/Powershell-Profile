@@ -26,6 +26,6 @@ function updateprofile {
     git clone $url
     start-process "$home\documents\psprofileupdate\update-powershell-profile-script\script.ps1"
     set-location C:\
-    remove-item $path -force
+    remove-item "$home\documents\psprofileupdate" -force
     exit
 }
