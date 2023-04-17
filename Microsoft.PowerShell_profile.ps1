@@ -17,7 +17,6 @@ function p {
         return write-host "$address offline"
     }
 }
-
 function updateprofile {
     $url = "https://github.com/louisruocco/Update-Powershell-Profile-Script"
     $path = new-item -Path "$home\documents\psprofileupdate" -type Directory
