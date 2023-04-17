@@ -17,16 +17,3 @@ function p {
         return write-host "$address offline"
     }
 }
-function updateprofile {
-    $url = "https://github.com/louisruocco/Update-Powershell-Profile-Script"
-    $path = "$home\documents\psprofileupdate"
-    New-item -Path $path -type Directory
-    set-location $path
-    git init
-    git remote add origin $url
-    git clone $url
-    start-process "$home\documents\psprofileupdate\update-powershell-profile-script\script.ps1"
-    set-location C:\
-    remove-item $path -force
-    exit
-}
