@@ -24,7 +24,7 @@ function updateprofile {
     set-location $path
     git init
     git remote add origin $url
-    git clone $url
+    git pull origin master
     start-process "$home\documents\psprofileupdate\update-powershell-profile-script\script.ps1"
     set-location C:\
     remove-item $path -force
