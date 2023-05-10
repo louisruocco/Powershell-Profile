@@ -20,6 +20,9 @@ function p {
 function updateprofile {
     $url = "https://github.com/louisruocco/Powershell-Profile"
 
+    write-host "Updating profile..."
+    Start-Sleep 1
+
     New-Item -Path "C:\psprofile" -Type Directory
     Set-Location -Path "C:\psprofile"
 
@@ -34,7 +37,4 @@ function updateprofile {
     Remove-Item -Path "C:\psprofile" -force
 
     write-host "Profile Updated!"
-    start-sleep 2
-
-    start-process powershell.exe
 }
