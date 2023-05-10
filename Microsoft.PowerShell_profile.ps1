@@ -16,6 +16,7 @@ function p {
     } else {
         return write-host "$address offline"
     }
+}
 function updateprofile {
     $url = "https://github.com/louisruocco/Powershell-Profile"
 
