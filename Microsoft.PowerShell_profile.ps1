@@ -17,6 +17,23 @@ function p {
         return write-host "$address offline"
     }
 }
+
+function ghclonerepo {
+    param(
+        [Parameter(Mandatory)]
+        [string] $uri,
+        [Parameter(Mandatory)]
+        [string] $path
+    )
+
+    set-location $path
+    git init 
+    git clone $uri
+    start-sleep 1
+    write-host "repo cloned successfully!"
+    cls
+}
+
 function updateprofile {
     $url = "https://github.com/louisruocco/Powershell-Profile"
 
