@@ -56,8 +56,7 @@ function updateprofile {
 
     write-host "Profile Updated!"
     start-sleep 2
-    exit
-    start-process powershell
+    . $profile
 }
 
 function newfolder {
