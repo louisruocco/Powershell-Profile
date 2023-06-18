@@ -60,8 +60,8 @@ function updateprofile {
 function newfolder {
     param (
         [Parameter(Mandatory)]
-        [string] $path
+        [string] $newFolderPath
     )
-
-    New-Item -ItemType Directory -Path $path
+    Write-Host "Please specify the path of the new folder"
+    New-Item -ItemType Directory -Path $newFolderPath
 }
