@@ -31,8 +31,8 @@ function ghclonerepo {
     git clone $uri
     start-sleep 1
     write-host "repo cloned successfully!"
-    cls
-    
+    start-sleep 2
+    cls   
 }
 
 function updateprofile {
@@ -55,6 +55,7 @@ function updateprofile {
     Remove-Item -Path "C:\psprofile" -force
 
     write-host "Profile Updated!"
+    . $profile
 }
 
 function newfolder {
@@ -62,6 +63,7 @@ function newfolder {
         [Parameter(Mandatory)]
         [string] $newFolderPath
     )
-    Write-Host "Please specify the path of the new folder"
+
     New-Item -ItemType Directory -Path $newFolderPath
+    invoke-item $newFolderPath
 }
