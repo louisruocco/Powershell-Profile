@@ -64,5 +64,7 @@ function newfolder {
         [Parameter(Mandatory)]
         [string] $newFolderPath
     )
+
     New-Item -ItemType Directory -Path $newFolderPath
+    invoke-item $newFolderPath
 }
