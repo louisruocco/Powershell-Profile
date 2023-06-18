@@ -55,7 +55,7 @@ function updateprofile {
     Remove-Item -Path "C:\psprofile" -force
 
     write-host "Profile Updated!"
-    . $profile
+    . $Profile
 }
 
 function newfolder {
