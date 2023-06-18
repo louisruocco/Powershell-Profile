@@ -18,13 +18,52 @@ function p {
     }
 }
 
-function psprofileupdate {
-    $url = "https://github.com/louisruocco/Update-Powershell-Profile-Script"
-    $path = new-item -Path "$home\documents\psprofileupdate" -type Directory
+function ghclonerepo {
+    param(
+        [Parameter(Mandatory)]
+        [string] $uri,
+        [Parameter(Mandatory)]
+        [string] $path
+    )
+
     set-location $path
+    git init 
+    git clone $uri
+    start-sleep 1
+    write-host "repo cloned successfully!"
+    start-sleep 2
+    cls   
+}
+
+function updateprofile {
+    $url = "https://github.com/louisruocco/Powershell-Profile"
+
+    write-host "Updating profile..."
+    Start-Sleep 1
+
+    New-Item -Path "C:\psprofile" -Type Directory
+    Set-Location -Path "C:\psprofile"
+
     git init
     git remote add origin $url
-    git clone $url
-    start-process "$path\update-powershell-profile-script\script.ps1"
+    git pull origin master
+
+    robocopy "C:\psprofile" "$home\Documents\WindowsPowerShell" /xj /tee /np /r:0 /w:0
+
+    set-location $home
+
+    Remove-Item -Path "C:\psprofile" -force
+
+    write-host "Profile Updated!"
+    start-sleep 2
     exit
+    start-process powershell
+}
+
+function newfolder {
+    param (
+        [Parameter(Mandatory)]
+        [string] $newFolderPath
+    )
+    New-Item -ItemType Directory -Path $newFolderPath
 }
