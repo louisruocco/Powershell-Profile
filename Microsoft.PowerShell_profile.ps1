@@ -32,6 +32,7 @@ function ghclonerepo {
     start-sleep 1
     write-host "repo cloned successfully!"
     cls
+    
 }
 
 function updateprofile {
@@ -54,4 +55,13 @@ function updateprofile {
     Remove-Item -Path "C:\psprofile" -force
 
     write-host "Profile Updated!"
+}
+
+function newfolder {
+    param (
+        [Parameter(Mandatory)]
+        [string] $path
+    )
+
+    New-Item -ItemType Directory -Path $path
 }
