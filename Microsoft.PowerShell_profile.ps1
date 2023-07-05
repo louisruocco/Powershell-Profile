@@ -22,13 +22,18 @@ function ghclonerepo {
     $uri = Read-Host -Prompt "Please paste the repo URI here"
     $path = read-host -Prompt "Please set the path for the cloned repo to live here"
 
+    if(!($uri -and $path)){
+        Write-Host "Please specify both the uri and the path for the repo"
+        return 
+    }
+    
     set-location $path
     git init 
     git clone $uri
     start-sleep 1
     write-host "repo cloned successfully!"
     start-sleep 2
-    cls   
+    cls  
 }
 
 function updateprofile {
