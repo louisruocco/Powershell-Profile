@@ -19,12 +19,8 @@ function p {
 }
 
 function ghclonerepo {
-    param(
-        [Parameter(Mandatory)]
-        [string] $uri,
-        [Parameter(Mandatory)]
-        [string] $path
-    )
+    $uri = Read-Host -Prompt "Please paste the repo URI here"
+    $path = read-host -Prompt "Please set the path for the cloned repo to live here"
 
     set-location $path
     git init 
