@@ -1,9 +1,6 @@
 
 $shell = $Host.UI.RawUI
 $shell.ForegroundColor = "green"
-function openmail {
-    start-process ms-unistore-email:
-}
 function p {
     param(
         [Parameter(Mandatory)]
