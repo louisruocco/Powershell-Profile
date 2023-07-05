@@ -2,6 +2,12 @@
 
 - My own Powershell Profile!
 
+## Changelog:
+
+- 05/07/23
+
+Removed openmail function as never used it. Updated ghclonerepo with logic so it won't return the success message when no path or uri have been inputted
+
 ## Functions:
 
 - `p`
