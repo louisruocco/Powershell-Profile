@@ -67,3 +67,17 @@ function newfolder {
     New-Item -ItemType Directory -Path $newFolderPath
     invoke-item $newFolderPath
 }
+
+function studysession {
+    $path = "C:\Users\Louis\AppData\Local\Study Session"
+    if(!(Test-Path $path)){
+        new-item -path $path -type Directory
+        new-item "$path\url.txt"
+        start-process "$path\url.txt"
+    }
+
+    start-process "https://www.youtube.com/watch?v=jfKfPfyJRdk&ab_channel=LofiGirl"
+    start-process "https://www.youtube.com/watch?v=F5FhmX2I_So&ab_channel=RainSoundNatural"
+    $url = Get-content "$path\url.txt"
+    start-process "$url"
+}
