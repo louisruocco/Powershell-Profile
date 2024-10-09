@@ -79,3 +79,16 @@ function studysession {
     $url = Get-content "$path\url.txt"
     start-process "$url"
 }
+
+function Start-DevEnvironment {
+    $context  = Get-AzContext
+    if(!$context){
+        Connect-AzAccount
+    } else {
+        Write-Output "Connected to Azure"
+    }
+
+    Write-Output "Starting Dev VMs"
+    Start-AzVM -ResourceGroupName "rg-lou-dev-env" -Name 'vmdev1'
+    Start-AzVM -ResourceGroupName "rg-lou-dev-env" -Name 'vmdev2'
+}
