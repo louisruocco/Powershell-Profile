@@ -1,6 +1,3 @@
-
-$shell = $Host.UI.RawUI
-$shell.ForegroundColor = "green"
 function p {
     param(
         [Parameter(Mandatory)]
@@ -46,12 +43,20 @@ function updateprofile {
     git remote add origin $url
     git pull origin master
 
-    robocopy "C:\psprofile" "$home\Documents\WindowsPowerShell" /xj /tee /np /r:0 /w:0
+    robocopy "C:\psprofile" "$home\Documents\Powershell" /xj /tee /np /r:0 /w:0
 
     set-location $home
 
     Remove-Item -Path "C:\psprofile" -force
 
     write-host "Profile Updated!"
-    . $Profile
+}
+
+function start-reading-session {
+    Write-Output "Minimising windows"
+    $shell = New-Object -ComObject "Shell.Application"
+    $shell.minimizeall()
+    Write-Output "Creating ambience..."
+    start-process "https://www.youtube.com/watch?v=jfKfPfyJRdk&ab_channel=LofiGirl"
+    start-process "https://www.youtube.com/watch?v=42M3esYyHdw"
 }
